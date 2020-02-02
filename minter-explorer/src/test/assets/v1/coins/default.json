@@ -1,0 +1,312 @@
+{
+  "data": [
+    {
+      "crr": 0,
+      "volume": "",
+      "reserveBalance": "",
+      "name": "",
+      "symbol": "MNT"
+    },
+    {
+      "crr": 50,
+      "volume": "7000000.000000000000000000",
+      "reserveBalance": "70000.000000000000000000",
+      "name": "BTC.Secure Coin",
+      "symbol": "BTCSECURE"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "MINTERBIP",
+      "symbol": "MINTERBIP"
+    },
+    {
+      "crr": 10,
+      "volume": "10000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "problkch01",
+      "symbol": "PROBLKCH01"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "MNTCOIN",
+      "symbol": "MNTCOIN"
+    },
+    {
+      "crr": 73,
+      "volume": "10000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "Validator.Center",
+      "symbol": "VALIDATOR"
+    },
+    {
+      "crr": 10,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "500.000000000000000000",
+      "name": "BTC.Secure Pool",
+      "symbol": "BSPOOL"
+    },
+    {
+      "crr": 10,
+      "volume": "100.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "BIPTHREUM",
+      "symbol": "BIPTHREUM"
+    },
+    {
+      "crr": 10,
+      "volume": "500000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "SEPARATOR",
+      "symbol": "SEPARATOR"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "BIPINVEST",
+      "symbol": "BIPINVEST"
+    },
+    {
+      "crr": 10,
+      "volume": "12400.000000000000000000",
+      "reserveBalance": "12400.000000000000000000",
+      "name": "EVSCAPITAL",
+      "symbol": "EVSCAPITAL"
+    },
+    {
+      "crr": 10,
+      "volume": "21000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "Bitcoin BTC Real",
+      "symbol": "BITCOINBTC"
+    },
+    {
+      "crr": 10,
+      "volume": "1500000.000000000000000000",
+      "reserveBalance": "15000.000000000000000000",
+      "name": "revolution",
+      "symbol": "REVOLUTION"
+    },
+    {
+      "crr": 90,
+      "volume": "10000000.000000000000000000",
+      "reserveBalance": "138461000.000000000000000000",
+      "name": "Algorithmic Crypto-USD",
+      "symbol": "USD"
+    },
+    {
+      "crr": 10,
+      "volume": "100000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "bipMaker coin",
+      "symbol": "BIPMAKER"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "APPLEBIP",
+      "symbol": "APPLEBIP"
+    },
+    {
+      "crr": 100,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "SokolCoin",
+      "symbol": "SOKOLCOIN"
+    },
+    {
+      "crr": 66,
+      "volume": "666.000000000000000000",
+      "reserveBalance": "6.000000000000000000",
+      "name": "VOODOOCOIN",
+      "symbol": "VOODOOCOIN"
+    },
+    {
+      "crr": 10,
+      "volume": "200.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "BipMaker2",
+      "symbol": "BIPMAKER2"
+    },
+    {
+      "crr": 50,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "10000.000000000000000000",
+      "name": "Rundax",
+      "symbol": "RUNDAXCOIN"
+    },
+    {
+      "crr": 51,
+      "volume": "10000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "Goodidea Progects ☤ CIF",
+      "symbol": "GOODIDEA"
+    },
+    {
+      "crr": 50,
+      "volume": "5000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "TEST COIN",
+      "symbol": "TESTCOIN01"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "700.000000000000000000",
+      "name": "Агрегатор монет",
+      "symbol": "AGREGATOR"
+    },
+    {
+      "crr": 10,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "CAFFESHOP",
+      "symbol": "CAFFESHOP"
+    },
+    {
+      "crr": 10,
+      "volume": "100000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "CAFFESHOP",
+      "symbol": "CAFFESHOP"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "CAFFESHOP",
+      "symbol": "CAFFESHOP"
+    },
+    {
+      "crr": 10,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "MINTERMINT",
+      "symbol": "MINTERMINT"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "CREDITOR1",
+      "symbol": "CREDITOR1"
+    },
+    {
+      "crr": 100,
+      "volume": "10.000000000000000000",
+      "reserveBalance": "5.000000000000000000",
+      "name": "INKUBATOR",
+      "symbol": "INKUBATOR"
+    },
+    {
+      "crr": 100,
+      "volume": "10.000000000000000000",
+      "reserveBalance": "5.000000000000000000",
+      "name": "TERMINATOR",
+      "symbol": "TERMINATOR"
+    },
+    {
+      "crr": 100,
+      "volume": "100.000000000000000000",
+      "reserveBalance": "5.000000000000000000",
+      "name": "Бульбулятор Грин Кэпиталс",
+      "symbol": "BULBULATOR"
+    },
+    {
+      "crr": 100,
+      "volume": "100.000000000000000000",
+      "reserveBalance": "3.000000000000000000",
+      "name": "SINTEZATOR investments",
+      "symbol": "SINTEZATOR"
+    },
+    {
+      "crr": 10,
+      "volume": "10.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "MINTERCASH\u003cimg src=# onerror=console.log('mintercash hello');\u003e",
+      "symbol": "MINTERCASH"
+    },
+    {
+      "crr": 10,
+      "volume": "10.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+      "symbol": "IIIIIIIIII"
+    },
+    {
+      "crr": 10,
+      "volume": "10.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "SHITCOIN 💩💩💩 SHITCOIN",
+      "symbol": "SHITCOIN"
+    },
+    {
+      "crr": 10,
+      "volume": "900000.000000000000000000",
+      "reserveBalance": "900.000000000000000000",
+      "name": "CREDITOR02",
+      "symbol": "CREDITOR02"
+    },
+    {
+      "crr": 10,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "XXXXXXXXXL",
+      "symbol": "XXXXXXXXXL"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "1000.000000000000000000",
+      "name": "CREDITOR03",
+      "symbol": "CREDITOR03"
+    },
+    {
+      "crr": 10,
+      "volume": "100000000000000.000000000000000000",
+      "reserveBalance": "10.000000000000000000",
+      "name": "problkch02",
+      "symbol": "PROBLKCH02"
+    },
+    {
+      "crr": 10,
+      "volume": "1000000.000000000000000000",
+      "reserveBalance": "5000.000000000000000000",
+      "name": "FuckMindTogether",
+      "symbol": "FMTCOIN"
+    },
+    {
+      "crr": 50,
+      "volume": "1000.000000000000000000",
+      "reserveBalance": "500.000000000000000000",
+      "name": "Delegate Test Coin",
+      "symbol": "DELEGATE"
+    },
+    {
+      "crr": 10,
+      "volume": "100.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "KIMERCOIN",
+      "symbol": "KIMERCOIN"
+    },
+    {
+      "crr": 50,
+      "volume": "50.000000000000000000",
+      "reserveBalance": "50.000000000000000000",
+      "name": "GromLight",
+      "symbol": "GROMLIGHT"
+    },
+    {
+      "crr": 10,
+      "volume": "100000.000000000000000000",
+      "reserveBalance": "100.000000000000000000",
+      "name": "CINEMACOIN",
+      "symbol": "CINEMACOIN"
+    }
+  ]
+}
