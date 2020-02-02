@@ -6,8 +6,9 @@ This is fork of Android java libs by MinterTeam https://github.com/MinterTeam?ut
 All Android deps removed.
 
 If you don't wish to build it yourself, just take jars from build/libs folder.
-Native libs are required to run this and can be found in libs/x86 folder. Pass path to it to as VM parameter:
--Djava.library.path=/somepath/libs/x86
+Native libs are required to run this and can be found in libs/x86 folder. Pass path to native libs as VM parameter:
+
+    -Djava.library.path=/somepath/libs/x86
 
 Use something like this to initialize SDK before use:
 
