@@ -11,7 +11,7 @@ Native libs required to run this and can be found in libs/x86 folder. Pass path 
 
 Use something like this to initialize SDK before use:
 
-   private static final String BASE_API_URL_PROD = "https://explorer-api.apps.minter.network/api/";
+    private static final String BASE_API_URL_PROD = "https://explorer-api.apps.minter.network/api/";
     private static final String GATE_API_URL_PROD = "https://gate.apps.minter.network/api/";
     private static final String BASE_NODE_URL_PROD = "https://minter-node.apps.minter.network";
 
