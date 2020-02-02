@@ -1,0 +1,3 @@
+rootProject.name = 'MinterSDK'
+include 'minter-core', 'minter-blockchain', 'minter-explorer'
+
