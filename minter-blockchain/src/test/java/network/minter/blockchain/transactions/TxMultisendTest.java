@@ -69,12 +69,12 @@ public class TxMultisendTest {
         BigInteger nonce = new BigInteger("1");
 
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin(gasCoin)
+                .setGasCoin(0)
                 .setBlockchainId(BlockchainID.TestNet)
                 .setPayload(payload)
                 .multiSend()
-                .addItem("MNT", "Mxfe60014a6e9ac91618f5d1cab3fd58cded61ee99", "0.1")
-                .addItem("MNT", "Mxddab6281766ad86497741ff91b6b48fe85012e3c", "0.2")
+                .addItem(0, "Mxfe60014a6e9ac91618f5d1cab3fd58cded61ee99", "0.1")
+                .addItem(0, "Mxddab6281766ad86497741ff91b6b48fe85012e3c", "0.2")
                 .build();
 
         assertNotNull(tx);

@@ -65,11 +65,11 @@ public class TxBuyCoinTest {
         final PrivateKey privateKey = new PrivateKey("07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142");
 
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
 		        .setBlockchainId(BlockchainID.TestNet)
                 .buyCoin()
-                .setCoinToBuy("TEST")
-                .setCoinToSell("MNT")
+                .setCoinToBuy(1)
+                .setCoinToSell(0)
                 .setValueToBuy("1")
                 .setMaxValueToSell("1")
                 .build();

@@ -29,6 +29,7 @@ package network.minter.explorer.models;
 import com.annimon.stream.Objects;
 import com.google.gson.annotations.SerializedName;
 
+import network.minter.core.Coin;
 import org.parceler.Parcel;
 import org.parceler.Transient;
 
@@ -58,6 +59,7 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
     public BigInteger txn;
     public MinterHash hash;
     public BigInteger nonce;
+    @SerializedName("height")
     public BigInteger block;
     public Date timestamp;
     public BigDecimal fee;
@@ -228,7 +230,7 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
     @Parcel
     public static class TxSendCoinResult {
         public MinterAddress to;
-        public String coin;
+        public Coin coin;
         @SerializedName("value")
         public BigDecimal amount;
 
@@ -236,11 +238,8 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
             return to;
         }
 
-        public String getCoin() {
-            if (coin == null) {
-                return null;
-            }
-            return coin.toUpperCase();
+        public Coin getCoin() {
+            return coin;
         }
 
         public BigDecimal getAmount() {
@@ -296,9 +295,9 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
     @Parcel
     public static class TxConvertCoinResult {
         @SerializedName("coin_to_sell")
-        public String coinToSell;
+        public Coin coinToSell;
         @SerializedName("coin_to_buy")
-        public String coinToBuy;
+        public Coin coinToBuy;
         @SerializedName("value_to_buy")
         public BigDecimal valueToBuy;
         @SerializedName("value_to_sell")
@@ -316,18 +315,12 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
             return maxValueToSell;
         }
 
-        public String getCoinToSell() {
-            if (coinToSell == null) {
-                return null;
-            }
-            return coinToSell.toUpperCase();
+        public Coin getCoinToSell() {
+            return coinToSell;
         }
 
-        public String getCoinToBuy() {
-            if (coinToBuy == null) {
-                return null;
-            }
-            return coinToBuy.toUpperCase();
+        public Coin getCoinToBuy() {
+            return coinToBuy;
         }
 
         public BigDecimal getValueToBuy() {
@@ -474,14 +467,14 @@ public class HistoryTransaction implements Serializable, Comparable<HistoryTrans
 
     @Parcel
     public static class CheckData {
-        public String coin;
+        public Coin coin;
         public String nonce;
         public BigDecimal value;
         public MinterAddress sender;
         @SerializedName("due_block")
         public BigInteger dueBlock;
 
-        public String getCoin() {
+        public Coin getCoin() {
             return coin;
         }
 

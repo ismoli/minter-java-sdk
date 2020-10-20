@@ -59,21 +59,21 @@ public class CheckTransaction {
     private BytesData mNonce;
     private BlockchainID mChainId;
     private BigInteger mDueBlock;
-    private String mCoin;
+    private Long mCoin;
     private BigInteger mValue;
-    private String mGasCoin;
+    private long mGasCoin;
     private BytesData mLock;
     private SignatureSingleData mSignature;
 
     CheckTransaction(BytesData nonce, String passphrase) {
-        mGasCoin = StringHelper.strrpad(10, MinterSDK.DEFAULT_COIN);
+        mGasCoin = 0;//StringHelper.strrpad(10, MinterSDK.DEFAULT_COIN.symbol);
         mCoin = mGasCoin;
         mNonce = nonce;
         mPassphrase = passphrase;
     }
 
     CheckTransaction() {
-        mGasCoin = StringHelper.strrpad(10, MinterSDK.DEFAULT_COIN);
+        mGasCoin = 0;//StringHelper.strrpad(10, MinterSDK.DEFAULT_COIN.symbol);
         mCoin = mGasCoin;
         mNonce = new BytesData("1".getBytes());
     }
@@ -147,8 +147,8 @@ public class CheckTransaction {
         mSignature = null;
     }
 
-    public String getCoin() {
-        return mCoin.replace("\0", "");
+    public Long getCoin() {
+        return mCoin;//.replace("\0", "");
     }
 
     /**
@@ -239,8 +239,8 @@ public class CheckTransaction {
         return mLock;
     }
 
-    public String getGasCoin() {
-        return mGasCoin.replace("\0", "");
+    public long getGasCoin() {
+        return mGasCoin;//.replace("\0", "");
     }
 
     char[] fromRawRlp(int idx, Object[] raw) {
@@ -256,9 +256,9 @@ public class CheckTransaction {
         mNonce = new BytesData((char[]) raw[idx++]);
         mChainId = BlockchainID.valueOf(fixBigintSignedByte(fromRawRlp(idx++, raw)));
         mDueBlock = fixBigintSignedByte(raw[idx++]);
-        mCoin = charsToStringSafe(fromRawRlp(idx++, raw), 10);
+        mCoin = Long.valueOf(charsToStringSafe(fromRawRlp(idx++, raw), 10));
         mValue = fixBigintSignedByte(raw[idx++]);
-        mGasCoin = charsToStringSafe(fromRawRlp(idx++, raw), 10);
+        mGasCoin = Long.valueOf(charsToStringSafe(fromRawRlp(idx++, raw), 10));
         mLock = new BytesData((char[]) raw[idx++]);
         mSignature = new SignatureSingleData();
 
@@ -334,10 +334,10 @@ public class CheckTransaction {
             return this;
         }
 
-        public Builder setCoin(@Nonnull String coin) {
+        public Builder setCoin(@Nonnull long coin) {
             //noinspection ConstantConditions
-            checkArgument(coin != null && coin.length() >= 3 && coin.length() <= 10, String.format("Invalid coin passed: %s", coin));
-            mCheck.mCoin = strrpad(10, coin);
+//            checkArgument(coin != null && coin.length() >= 3 && coin.length() <= 10, String.format("Invalid coin passed: %s", coin));
+            mCheck.mCoin = coin;//strrpad(10, coin);
             return this;
         }
 
@@ -355,8 +355,8 @@ public class CheckTransaction {
             return this;
         }
 
-        public Builder setGasCoin(String gasCoin) {
-            mCheck.mGasCoin = StringHelper.strrpad(10, gasCoin);
+        public Builder setGasCoin(long gasCoin) {
+            mCheck.mGasCoin = gasCoin;//StringHelper.strrpad(10, gasCoin);
             return this;
         }
 

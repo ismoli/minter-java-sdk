@@ -61,7 +61,7 @@ public class ExternalTransaction  {
     BytesData mPayload = new BytesData(new char[0]);
     BigInteger mNonce;
     BigInteger mGasPrice;
-    String mGasCoin = MinterSDK.DEFAULT_COIN;
+    long mGasCoin = MinterSDK.DEFAULT_COIN.id;
 
     public ExternalTransaction(Transaction transaction) {
         mNonce = transaction.mNonce;
@@ -116,7 +116,8 @@ public class ExternalTransaction  {
                 mPayload.getData(),
                 firstNonNull(mNonce, BigInteger.ZERO),
                 firstNonNull(mGasPrice, new BigInteger("1")),
-                firstNonNull(StringHelper.strrpad(10, mGasCoin), ""),
+                mGasCoin
+//                firstNonNull(StringHelper.strrpad(10, mGasCoin), ""),
         });
         return new BytesData(res);
     }
@@ -130,8 +131,8 @@ public class ExternalTransaction  {
         return mType;
     }
 
-    public String getGasCoin() {
-        return mGasCoin.replace("\0", "");
+    public long getGasCoin() {
+        return mGasCoin;//mGasCoin.replace("\0", "");
     }
 
     public BigInteger getNonce() {
@@ -185,7 +186,7 @@ public class ExternalTransaction  {
     public void cleanup() {
         mNonce = null;
         mGasPrice = null;
-        mGasCoin = null;
+        mGasCoin = 0;
         mType = null;
         mOperationData = null;
         mPayload = null;
@@ -204,7 +205,7 @@ public class ExternalTransaction  {
         mPayload = new BytesData(fromRawRlp(2, raw));
         mNonce = fixBigintSignedByte(raw[3]);
         mGasPrice = fixBigintSignedByte((raw[4]));
-        mGasCoin = charsToString(fromRawRlp(5, raw));
+        mGasCoin = Long.valueOf(charsToString(fromRawRlp(5, raw)));
     }
 
     public static class Builder {
@@ -229,8 +230,8 @@ public class ExternalTransaction  {
          * @param coin string coin name. Min length: 3, maximum: 10
          * @return {@link Transaction.Builder}
          */
-        public Builder setGasCoin(String coin) {
-            mTx.mGasCoin = strrpad(10, coin);
+        public Builder setGasCoin(long coin) {
+            mTx.mGasCoin = coin;//strrpad(10, coin);
             return this;
         }
 

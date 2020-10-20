@@ -66,14 +66,14 @@ public class AddressDataTest {
 
         AddressData.CoinBalance def = data.coins.get(MinterSDK.DEFAULT_COIN);
         assertNotNull(def);
-        Assert.assertEquals(MinterSDK.DEFAULT_COIN, def.getCoin());
-        Assert.assertEquals(def.getCoin(), def.coin);
+        Assert.assertEquals(MinterSDK.DEFAULT_COIN, def.getCoinSymbol());
+        Assert.assertEquals(def.getCoinSymbol(), def.coin);
 
         def.coin = null;
-        assertNull(def.getCoin());
+        assertNull(def.getCoinSymbol());
 
-        def.coin = MinterSDK.DEFAULT_COIN.toLowerCase();
-        Assert.assertEquals(MinterSDK.DEFAULT_COIN.toUpperCase(), def.getCoin());
+        def.coin = MinterSDK.DEFAULT_COIN;
+        Assert.assertEquals(MinterSDK.DEFAULT_COIN, def.getCoinSymbol());
 
         data.coins = null;
         assertEquals(ZERO, data.getTotalBalance());

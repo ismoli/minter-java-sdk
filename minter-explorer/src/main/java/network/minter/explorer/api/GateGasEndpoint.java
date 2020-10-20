@@ -38,6 +38,6 @@ import retrofit2.http.GET;
  */
 public interface GateGasEndpoint {
 
-    @GET("v1/min-gas")
+    @GET("min-gas")
     Call<GateResult<GasValue>> getMinGas();
 }

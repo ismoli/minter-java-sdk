@@ -110,7 +110,7 @@ public class TransactionRepositoryTest extends BaseRepoTest {
         // @TODO fix it on backend!
         //assertEquals(BuildConfig.BASE_API_URL + "v1/transactions", meta.path);
         assertNotNull(meta.path);
-        assertTrue(meta.path.contains("v1/transactions"));
+        assertTrue(meta.path.contains("transactions"));
 
         assertEquals(meta.total, transactions.size());
 

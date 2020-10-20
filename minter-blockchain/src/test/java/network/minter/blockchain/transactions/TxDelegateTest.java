@@ -65,7 +65,7 @@ public class TxDelegateTest {
         final PrivateKey privateKey = new PrivateKey("6e1df6ec69638d152f563c5eca6c13cdb5db4055861efc11ec1cdd578afd96bf");
 
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setBlockchainId(BlockchainID.TestNet)
                 .delegate()
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
@@ -107,7 +107,7 @@ public class TxDelegateTest {
 
 		Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-				.setGasCoin("MNT")
+				.setGasCoin(0)
 				.delegate()
 				.setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
 				.setCoin("MNT")

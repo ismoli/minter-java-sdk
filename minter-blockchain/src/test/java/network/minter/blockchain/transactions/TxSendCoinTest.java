@@ -117,7 +117,7 @@ public class TxSendCoinTest {
 //
 //        Transaction walletTx = new Transaction.Builder(new BigInteger("3"))
 //                .setBlockchainId(BlockchainID.TestNet)
-//                .setGasCoin("MNT")
+//                .setGasCoin(0)
 //                .setGasPrice(BigInteger.ONE)
 //                .sendCoin()
 //                .setCoin("MNT")
@@ -154,8 +154,8 @@ public class TxSendCoinTest {
         assertEquals(new MinterAddress("Mxb445feaf3eb747ac52426b054aa42b0b3d913e1f"), toAddress);
 
         BigInteger nonce = new BigInteger("128");
-        String coin = "MNT";
-        String gasCoin = "MNT";
+        long coin = 0;
+        long gasCoin = 0;
 
         Transaction tx = new Transaction.Builder(nonce)
                 .setGasCoin(gasCoin)
@@ -200,10 +200,10 @@ public class TxSendCoinTest {
 
         Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-                .setGasCoin(gasCoin)
+                .setGasCoin(0)
                 .setPayload(payload)
                 .sendCoin()
-                .setCoin(coin)
+                .setCoin(0)
                 .setValue(valueHuman)
                 .setTo(toAddress)
                 .build();
@@ -252,10 +252,10 @@ public class TxSendCoinTest {
 
         Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-                .setGasCoin(gasCoin)
+                .setGasCoin(0)
                 .setPayload(payload)
                 .sendCoin()
-                .setCoin(coin)
+                .setCoin(0)
                 .setValue(valueHuman)
                 .setTo(toAddress)
                 .build();

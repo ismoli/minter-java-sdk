@@ -80,7 +80,7 @@ public class TxEditCandidateTest {
 
         BigInteger nonce = new BigInteger("1");
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setBlockchainId(BlockchainID.TestNet)
                 .editCandidate()
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))

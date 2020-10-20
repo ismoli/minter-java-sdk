@@ -65,7 +65,7 @@ public class TxRedeemCheckTest {
         Transaction tx = new Transaction.Builder(new BigInteger("1"))
                 .setBlockchainId(BlockchainID.TestNet)
                 .setGasPrice(new BigInteger("1"))
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .redeemCheck()
                 .setProof(validProof)
                 .setRawCheck(validCheck)

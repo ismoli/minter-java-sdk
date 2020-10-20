@@ -30,7 +30,7 @@
 //apply plugin: 'com.jfrog.bintray'
 
 group = 'network.minter.core'
-version = '0.7.0'
+version = '1.2'
 
 def libPath = ""
 if(hasProperty("nativeLibPath")) {

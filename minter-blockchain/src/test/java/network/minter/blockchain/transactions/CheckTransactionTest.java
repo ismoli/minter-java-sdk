@@ -66,8 +66,8 @@ public class CheckTransactionTest {
 
         CheckTransaction check = new CheckTransaction.Builder(new BigInteger("128"), "hello")
                 .setChainId(BlockchainID.TestNet)
-                .setCoin("MNT")
-                .setGasCoin("MNT")
+                .setCoin(0)
+                .setGasCoin(0)
                 .setDueBlock(new BigInteger("999999999"))
                 .setValue("128")
                 .build();
@@ -107,8 +107,8 @@ public class CheckTransactionTest {
 
         CheckTransaction check = new CheckTransaction.Builder(new BigInteger("128"), pass)
                 .setChainId(BlockchainID.TestNet)
-                .setGasCoin("MNT")
-                .setCoin("MNT")
+                .setGasCoin(0)
+                .setCoin(0)
                 .setDueBlock(new BigInteger("999999999"))
                 .setValue("128")
                 .build();

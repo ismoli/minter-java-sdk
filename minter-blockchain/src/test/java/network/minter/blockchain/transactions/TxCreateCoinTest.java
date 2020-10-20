@@ -64,7 +64,7 @@ public class TxCreateCoinTest {
         final PrivateKey privateKey = new PrivateKey("07bc17abdcee8b971bb8723e36fe9d2523306d5ab2d683631693238e0f9df142");
 
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
 		        .setGasPrice(new BigInteger("1"))
 		        .setBlockchainId(BlockchainID.TestNet)
                 .createCoin()

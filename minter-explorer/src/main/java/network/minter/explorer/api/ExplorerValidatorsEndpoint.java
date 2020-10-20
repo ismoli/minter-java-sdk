@@ -39,6 +39,6 @@ import retrofit2.http.GET;
  */
 public interface ExplorerValidatorsEndpoint {
 
-    @GET("v1/validators")
+    @GET("validators")
     Call<ExpResult<List<ValidatorItem>>> getValidators();
 }

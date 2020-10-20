@@ -41,7 +41,7 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
  */
 public class MinterSDK {
     @SuppressWarnings("unused")
-    public static String DEFAULT_COIN = "MTN";
+    public static Coin DEFAULT_COIN = new Coin(0l,"MTN");
     public final static String PREFIX_ADDRESS = "Mx";
     public final static String PREFIX_TX = "Mt";
     public final static String PREFIX_CHECK = "Mc";
@@ -57,7 +57,7 @@ public class MinterSDK {
 
     public static void initialize(String env) throws NativeLoadException {
         if(INSTANCE == null) {
-            DEFAULT_COIN = env.equalsIgnoreCase("prod")?"BIP":"MNT";
+            DEFAULT_COIN = env.equalsIgnoreCase("prod")?new Coin(0l,"BIP"):DEFAULT_COIN;
             INSTANCE = new MinterSDK();
             NativeSecp256k1.init();
             NativeBip39.init();

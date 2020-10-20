@@ -83,7 +83,7 @@ public class Transaction  {
     BigInteger mNonce;
     BlockchainID mChainId;
     BigInteger mGasPrice = new BigInteger("1");
-    String mGasCoin = MinterSDK.DEFAULT_COIN;
+    long mGasCoin = MinterSDK.DEFAULT_COIN.id;
     OperationType mType = OperationType.SendCoin;
     Operation mOperationData;
 
@@ -175,7 +175,7 @@ public class Transaction  {
         mNonce = null;
         mChainId = null;
         mGasPrice = null;
-        mGasCoin = null;
+        mGasCoin = 0;
         mType = null;
         mOperationData = null;
         mPayload = null;
@@ -338,8 +338,8 @@ public class Transaction  {
         return mChainId;
     }
 
-    public String getGasCoin() {
-        return mGasCoin.replace("\0", "");
+    public long getGasCoin() {
+        return mGasCoin;//mGasCoin.replace("\0", "");
     }
 
     public BytesData getPayload() {
@@ -366,7 +366,7 @@ public class Transaction  {
         mNonce = fixBigintSignedByte(raw[0]);
         mChainId = BlockchainID.valueOf(fixBigintSignedByte(fromRawRlp(1, raw)));
         mGasPrice = fixBigintSignedByte((raw[2]));
-        mGasCoin = charsToString(fromRawRlp(3, raw), 10);
+        mGasCoin = Long.valueOf(charsToString(fromRawRlp(3, raw), 10));
         mType = OperationType.findByValue(new BigInteger(charsToBytes(fromRawRlp(4, raw))));
         /**
          * ha, where is the 5th index?
@@ -409,7 +409,7 @@ public class Transaction  {
     FieldsValidationResult validate() {
         return new FieldsValidationResult("Invalid transaction data")
                 .addResult("nonce", mNonce != null, "Nonce must be set")
-                .addResult("gasPrice", mGasCoin != null, "Gas coin must be set")
+//                .addResult("gasPrice", mGasCoin != null, "Gas coin must be set")
                 .addResult("operationData", mOperationData !=
                         null, "Operation data does not set! Check your operation model.");
     }
@@ -425,11 +425,11 @@ public class Transaction  {
             mTx.mType = externalTransaction.getType();
             mTx.mOperationData = externalTransaction.mOperationData;
             mTx.mPayload = firstNonNull(externalTransaction.getPayload(), new BytesData(new char[0]));
-            if (externalTransaction.getGasCoin() == null || externalTransaction.getGasCoin().equals("")) {
-                mTx.mGasCoin = strrpad(10, MinterSDK.DEFAULT_COIN);
-            } else {
-                mTx.mGasCoin = strrpad(10, externalTransaction.getGasCoin());
-            }
+//            if (externalTransaction.getGasCoin() == null || externalTransaction.getGasCoin().equals("")) {
+//                mTx.mGasCoin = MinterSDK.DEFAULT_COIN.id;//strrpad(10, MinterSDK.DEFAULT_COIN.symbol);
+//            } else {
+                mTx.mGasCoin = externalTransaction.getGasCoin();//strrpad(10, externalTransaction.getGasCoin());
+//            }
 
             if (externalTransaction.getGasPrice() == null || externalTransaction.getGasPrice().equals(BigInteger.ZERO)) {
                 mTx.mGasPrice = BigInteger.ONE;
@@ -477,8 +477,8 @@ public class Transaction  {
          * @param coin string coin name. Min length: 3, maximum: 10
          * @return {@link Builder}
          */
-        public Builder setGasCoin(String coin) {
-            mTx.mGasCoin = strrpad(10, coin);
+        public Builder setGasCoin(long coin) {
+            mTx.mGasCoin = coin;//strrpad(10, coin);
             return this;
         }
 

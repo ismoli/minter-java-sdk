@@ -37,6 +37,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
+import network.minter.core.Coin;
 import network.minter.core.crypto.MinterAddress;
 import network.minter.explorer.models.AddressData;
 
@@ -78,8 +79,9 @@ public class ExplorerAddressDataDeserializer implements JsonDeserializer<Address
                 final JsonObject coin = coins.get(i).getAsJsonObject();
                 final AddressData.CoinBalance b = new AddressData.CoinBalance();
                 b.amount = coin.get("amount").getAsBigDecimal();
-                b.coin = coin.get("coin").getAsString();
-                out.put(b.coin, b);
+                JsonObject coinObj = coin.get("coin").getAsJsonObject();
+                b.coin = new Coin(coinObj.get("id").getAsLong(), coinObj.get("symbol").getAsString());
+                out.put(b.coin.symbol, b);
             }
 
             data.coins = out;

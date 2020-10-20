@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MinterSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/MinterSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-blockchain/minter-blockchain.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-blockchain/minter-blockchain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-core/minter-core.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-core/minter-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-explorer/minter-explorer.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-explorer/minter-explorer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MinterSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/MinterSDK.iml" group="MinterSDK" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-blockchain/minter-blockchain.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-blockchain/minter-blockchain.iml" group="MinterSDK/minter-blockchain" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-core/minter-core.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-core/minter-core.iml" group="MinterSDK/minter-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minter-explorer/minter-explorer.iml" filepath="$PROJECT_DIR$/.idea/modules/minter-explorer/minter-explorer.iml" group="MinterSDK/minter-explorer" />
     </modules>
   </component>
 </project>

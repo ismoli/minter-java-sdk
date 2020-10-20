@@ -42,31 +42,31 @@ import retrofit2.http.QueryMap;
  * @author Eduard Maximovich <edward.vstock@gmail.com>
  */
 public interface ExplorerTransactionEndpoint {
-    @GET("v1/addresses/{address}/transactions")
+    @GET("addresses/{address}/transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactionsByAddress(@Path("address") String address);
 
-    @GET("v1/addresses/{address}/transactions")
+    @GET("addresses/{address}/transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactionsByAddress(@Path("address") String address, @Query("page") long page);
 
-    @GET("v1/addresses/{address}/transactions")
-    Call<ExpResult<List<HistoryTransaction>>> getTransactionsByAddress(@Path("address") String address, @Query("startblock") long fromBlock, @Query("endblock") long toBlock);
+    @GET("addresses/{address}/transactions")
+    Call<ExpResult<List<HistoryTransaction>>> getTransactionsByAddress(@Path("address") String address, @Query("start_block") long fromBlock, @Query("end_block") long toBlock);
 
-    @GET("v1/transactions")
+    @GET("transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactions(@QueryMap Map<String, Object> query);
 
-    @GET("v1/transactions")
+    @GET("transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactions(@Query(value = "addresses[]", encoded = true) List<String> addresses);
 
-    @GET("v1/transactions")
+    @GET("transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactions(@Query(value = "addresses[]", encoded = true) List<String> addresses, @Query("page") long page);
 
-    @GET("v1/transactions")
+    @GET("transactions")
     Call<ExpResult<List<HistoryTransaction>>> getTransactions(
             @Query(value = "addresses[]", encoded = true) List<String> addresses,
             @Query("page") long page,
             @Query("limit") int limit
     );
 
-    @GET("v1/transaction/{hash}")
+    @GET("transaction/{hash}")
     Call<ExpResult<HistoryTransaction>> findTransactionByHash(@Path("hash") String hash);
 }

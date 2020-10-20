@@ -83,12 +83,12 @@ public class AddressRepositoryTest extends BaseRepoTest {
 
         assertNotNull(data.coins.get("PROBLKCH02"));
         AddressData.CoinBalance b1 = data.coins.get("PROBLKCH02");
-        assertEquals("PROBLKCH02", b1.getCoin());
+        assertEquals("PROBLKCH02", b1.getCoinSymbol());
         assertEquals(new BigDecimal("165695681186885.069475041566967905"), b1.getAmount());
 
         assertNotNull(data.coins.get("MNT"));
         AddressData.CoinBalance b2 = data.coins.get("MNT");
-        assertEquals("MNT", b2.getCoin());
+        assertEquals("MNT", b2.getCoinSymbol());
         assertEquals(new BigDecimal("0e-18"), b2.getAmount());
 
 
@@ -172,12 +172,12 @@ public class AddressRepositoryTest extends BaseRepoTest {
 
         assertNotNull(data.coins.get("BTCSECURE"));
         AddressData.CoinBalance b1 = data.coins.get("BTCSECURE");
-        assertEquals("BTCSECURE", b1.getCoin());
+        assertEquals("BTCSECURE", b1.getCoinSymbol());
         assertEquals(new BigDecimal("1.970000000000000000"), b1.getAmount());
 
         assertNotNull(data.coins.get("MNT"));
         AddressData.CoinBalance b2 = data.coins.get("MNT");
-        assertEquals("MNT", b2.getCoin());
+        assertEquals("MNT", b2.getCoinSymbol());
         assertEquals(new BigDecimal("899.590579976503661317"), b2.getAmount());
 
 

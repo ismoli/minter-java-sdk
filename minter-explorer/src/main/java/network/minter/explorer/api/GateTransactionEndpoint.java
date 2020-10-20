@@ -40,6 +40,6 @@ import retrofit2.http.POST;
  */
 public interface GateTransactionEndpoint {
 
-    @POST("v1/transaction/push")
+    @POST("transaction/push")
     Call<GateResult<TransactionSendResult>> sendTransaction(@Body Map<String, String> data);
 }

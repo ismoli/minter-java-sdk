@@ -65,7 +65,7 @@ public class TxSetCandidateOfflineTest {
 
         Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setCandidateOffline()
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
                 .build();

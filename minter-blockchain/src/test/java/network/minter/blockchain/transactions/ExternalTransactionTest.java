@@ -78,7 +78,7 @@ public class ExternalTransactionTest {
     @Test
     public void testSendEncodeDecode() {
         TxSendCoin txData = new TxSendCoin()
-                .setCoin(MinterSDK.DEFAULT_COIN)
+                .setCoin(MinterSDK.DEFAULT_COIN.id)
                 .setTo("Mx8d008dffe2f9144a39a2094ebdedadad335e814f")
                 .setValue("100");
 
@@ -108,8 +108,8 @@ public class ExternalTransactionTest {
     @Test
     public void testSellEncodeDecode() {
         TxCoinSell txData = new TxCoinSell()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setValueToSell("100")
                 .setMinValueToBuy("0.0001");
 
@@ -139,8 +139,8 @@ public class ExternalTransactionTest {
     @Test
     public void testSellAllEncodeDecode() {
         TxCoinSellAll txData = new TxCoinSellAll()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setMinValueToBuy("0.0001");
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
@@ -168,8 +168,8 @@ public class ExternalTransactionTest {
     @Test
     public void testBuyEncodeDecode() {
         TxCoinBuy txData = new TxCoinBuy()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setValueToBuy("1")
                 .setMaxValueToSell("100");
 
@@ -207,8 +207,8 @@ public class ExternalTransactionTest {
     @Test
     public void testBuyEncodeDecodeWithNonce128() {
         TxCoinBuy txData = new TxCoinBuy()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setValueToBuy("1")
                 .setMaxValueToSell("100");
 
@@ -243,8 +243,8 @@ public class ExternalTransactionTest {
     @Test
     public void testBuyEncodeDecodeWithNonce255() {
         TxCoinBuy txData = new TxCoinBuy()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setValueToBuy("1")
                 .setMaxValueToSell("100");
 
@@ -279,8 +279,8 @@ public class ExternalTransactionTest {
     @Test
     public void testBuyEncodeDecodeWithNonce256() {
         TxCoinBuy txData = new TxCoinBuy()
-                .setCoinToBuy("BANANATEST")
-                .setCoinToSell(MinterSDK.DEFAULT_COIN)
+                .setCoinToBuy(1)
+                .setCoinToSell(MinterSDK.DEFAULT_COIN.id)
                 .setValueToBuy("1")
                 .setMaxValueToSell("100");
 
@@ -351,7 +351,7 @@ public class ExternalTransactionTest {
                 .setAddress(new MinterAddress("Mx9f7fd953c2c69044b901426831ed03ee0bd0597a"))
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
                 .setCommission(10)
-                .setCoin(MinterSDK.DEFAULT_COIN)
+                .setCoin(MinterSDK.DEFAULT_COIN.symbol)
                 .setStake("5");
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
@@ -382,7 +382,7 @@ public class ExternalTransactionTest {
     public void testDelegateEncodeDecode() {
         TxDelegate txData = new TxDelegate()
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
-                .setCoin(MinterSDK.DEFAULT_COIN)
+                .setCoin(MinterSDK.DEFAULT_COIN.symbol)
                 .setStake("10");
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
@@ -411,7 +411,7 @@ public class ExternalTransactionTest {
     public void testUnbondEncodeDecode() {
         TxUnbound txData = new TxUnbound()
                 .setPublicKey(new MinterPublicKey("Mp0eb98ea04ae466d8d38f490db3c99b3996a90e24243952ce9822c6dc1e2c1a43"))
-                .setCoin(MinterSDK.DEFAULT_COIN)
+                .setCoin(MinterSDK.DEFAULT_COIN.symbol)
                 .setValue("10");
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
@@ -493,8 +493,8 @@ public class ExternalTransactionTest {
     @Test
     public void testMultisendEncodeDecode() {
         TxMultisend txData = new TxMultisend()
-                .addItem(MinterSDK.DEFAULT_COIN, "Mxfe60014a6e9ac91618f5d1cab3fd58cded61ee99", "0.1")
-                .addItem(MinterSDK.DEFAULT_COIN, "Mxddab6281766ad86497741ff91b6b48fe85012e3c", "0.2");
+                .addItem(MinterSDK.DEFAULT_COIN.id, "Mxfe60014a6e9ac91618f5d1cab3fd58cded61ee99", "0.1")
+                .addItem(MinterSDK.DEFAULT_COIN.id, "Mxddab6281766ad86497741ff91b6b48fe85012e3c", "0.2");
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
                 .setData(txData)
@@ -563,8 +563,8 @@ public class ExternalTransactionTest {
         CheckTransaction check = new CheckTransaction.Builder("wazzap", "pass")
                 .setDueBlock(new BigInteger("999999999"))
                 .setChainId(BlockchainID.TestNet)
-                .setGasCoin("MNT")
-                .setCoin("MNT")
+                .setGasCoin(0)
+                .setCoin(0)
                 .setValue("10")
                 .build();
 
@@ -574,7 +574,7 @@ public class ExternalTransactionTest {
                 .setRawCheck(rawCheck);
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setData(txData)
                 .build();
 
@@ -610,8 +610,8 @@ public class ExternalTransactionTest {
         CheckTransaction check = new CheckTransaction.Builder("128", "hello")
                 .setDueBlock(new BigInteger("999999999"))
                 .setChainId(BlockchainID.TestNet)
-                .setGasCoin("MNT")
-                .setCoin("MNT")
+                .setGasCoin(0)
+                .setCoin(0)
                 .setValue("128")
                 .build();
 
@@ -623,7 +623,7 @@ public class ExternalTransactionTest {
                 .setProof(proof);
 
         ExternalTransaction tx = new ExternalTransaction.Builder()
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setGasPrice(BigInteger.ONE)
                 .setData(txData)
                 .build();

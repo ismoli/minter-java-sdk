@@ -30,7 +30,7 @@
 //apply plugin: 'jacoco'
 
 group = 'network.minter'
-version = '0.6.3'
+version = '1.2'
 
 ext {
     minterMinSdk = 16

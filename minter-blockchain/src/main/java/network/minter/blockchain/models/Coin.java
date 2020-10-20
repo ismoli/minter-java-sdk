@@ -43,6 +43,7 @@ import network.minter.core.crypto.MinterAddress;
  */
 @Parcel
 public class Coin {
+    public long id;
     public String name;
     public String symbol;
     public BigInteger volume;

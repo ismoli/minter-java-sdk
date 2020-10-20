@@ -50,8 +50,8 @@ import static network.minter.core.internal.helpers.StringHelper.charsToString;
  */
 public final class TxCoinSellAll extends Operation {
 
-    private String mCoinToSell;
-    private String mCoinToBuy;
+    private Long mCoinToSell;
+    private Long mCoinToBuy;
     private BigInteger mMinValueToBuy;
 
     public TxCoinSellAll() {
@@ -63,21 +63,21 @@ public final class TxCoinSellAll extends Operation {
 
 
 
-    public String getCoinToSell() {
-        return mCoinToSell.replace("\0", "");
+    public Long getCoinToSell() {
+        return mCoinToSell;//.replace("\0", "");
     }
 
-    public TxCoinSellAll setCoinToSell(String coin) {
-        mCoinToSell = StringHelper.strrpad(10, coin.toUpperCase());
+    public TxCoinSellAll setCoinToSell(long coin) {
+        mCoinToSell = coin;//StringHelper.strrpad(10, coin.toUpperCase());
         return this;
     }
 
-    public String getCoinToBuy() {
-        return mCoinToBuy.replace("\0", "");
+    public Long getCoinToBuy() {
+        return mCoinToBuy;//.replace("\0", "");
     }
 
-    public TxCoinSellAll setCoinToBuy(String coin) {
-        mCoinToBuy = StringHelper.strrpad(10, coin.toUpperCase());
+    public TxCoinSellAll setCoinToBuy(long coin) {
+        mCoinToBuy = coin;//StringHelper.strrpad(10, coin.toUpperCase());
         return this;
     }
 
@@ -111,8 +111,8 @@ public final class TxCoinSellAll extends Operation {
     @Override
     protected FieldsValidationResult validate() {
         return new FieldsValidationResult()
-                .addResult("mCoinToBuy", mCoinToBuy != null && mCoinToBuy.length() > 2 && mCoinToBuy.length() < 11, "Coin length must be from 3 to 10 chars")
-                .addResult("mCoinToSell", mCoinToSell != null && mCoinToSell.length() > 2 && mCoinToSell.length() < 11, "Coin length must be from 3 to 10 chars")
+                .addResult("mCoinToBuy", mCoinToBuy != null, "Coin length must be from 3 to 10 chars")
+                .addResult("mCoinToSell", mCoinToSell != null, "Coin length must be from 3 to 10 chars")
                 .addResult("mMinValueToBuy", mMinValueToBuy != null, "Minimum value to buy must be set");
     }
 
@@ -131,8 +131,8 @@ public final class TxCoinSellAll extends Operation {
 	    final DecodeResult rlp = RLPBoxed.decode(rlpEncodedData, 0);/**/
         final Object[] decoded = (Object[]) rlp.getDecoded();
 
-	    mCoinToSell = charsToString(fromRawRlp(0, decoded));
-	    mCoinToBuy = charsToString(fromRawRlp(1, decoded));
+	    mCoinToSell = Long.valueOf(charsToString(fromRawRlp(0, decoded)));
+	    mCoinToBuy = Long.valueOf(charsToString(fromRawRlp(1, decoded)));
         mMinValueToBuy = fixBigintSignedByte(fromRawRlp(2, decoded));
     }
 }

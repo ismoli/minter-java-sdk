@@ -26,6 +26,7 @@
 
 package network.minter.explorer.models;
 
+import network.minter.core.Coin;
 import org.parceler.Parcel;
 
 import java.math.BigDecimal;
@@ -65,7 +66,7 @@ public class AddressData {
 
     public void fillDefaultsOnEmpty() {
         if (getCoins().isEmpty()) {
-            coins.put(MinterSDK.DEFAULT_COIN, new CoinBalance(MinterSDK.DEFAULT_COIN, ZERO));
+            coins.put(MinterSDK.DEFAULT_COIN.symbol, new CoinBalance(MinterSDK.DEFAULT_COIN, ZERO));
         }
     }
 
@@ -87,22 +88,22 @@ public class AddressData {
 
     @Parcel
     public static class CoinBalance {
-        public String coin;
+        public Coin coin;
         public BigDecimal amount;
 
         public CoinBalance() {
         }
 
-        public CoinBalance(String coin, BigDecimal value) {
+        public CoinBalance(Coin coin, BigDecimal value) {
             this.coin = coin;
             this.amount = value;
         }
 
-        public String getCoin() {
-            if (coin == null) {
+        public String getCoinSymbol() {
+            if (coin == null || coin.symbol == null) {
                 return null;
             }
-            return coin.toUpperCase();
+            return coin.symbol.toUpperCase();
         }
 
         public BigDecimal getAmount() {

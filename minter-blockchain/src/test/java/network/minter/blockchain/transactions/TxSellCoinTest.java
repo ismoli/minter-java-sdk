@@ -67,10 +67,10 @@ public class TxSellCoinTest {
 
         Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .sellCoin()
-                .setCoinToBuy("TEST")
-                .setCoinToSell("MNT")
+                .setCoinToBuy(1)
+                .setCoinToSell(0)
                 .setValueToSell("1")
                 .setMinValueToBuy("1")
                 .build();
@@ -89,10 +89,10 @@ public class TxSellCoinTest {
 
 		Transaction tx = new Transaction.Builder(nonce)
                 .setBlockchainId(BlockchainID.TestNet)
-				.setGasCoin("MNT")
+				.setGasCoin(0)
 				.sellAllCoins()
-				.setCoinToBuy("TEST")
-				.setCoinToSell("MNT")
+				.setCoinToBuy(1)
+				.setCoinToSell(0)
                 .setMinValueToBuy("1")
 				.build();
 

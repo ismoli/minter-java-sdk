@@ -40,9 +40,9 @@ import retrofit2.http.Query;
  */
 public interface ExplorerCoinsEndpoint {
 
-    @GET("v1/coins")
+    @GET("coins")
     Call<ExpResult<List<CoinItem>>> getAll();
 
-    @GET("v1/coins")
+    @GET("coins")
     Call<ExpResult<List<CoinItem>>> search(@Query("symbol") String symbol);
 }

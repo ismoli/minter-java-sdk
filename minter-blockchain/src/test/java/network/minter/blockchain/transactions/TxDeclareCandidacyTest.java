@@ -67,7 +67,7 @@ public class TxDeclareCandidacyTest {
         final PrivateKey privateKey = new PrivateKey("6e1df6ec69638d152f563c5eca6c13cdb5db4055861efc11ec1cdd578afd96bf");
 
         Transaction tx = new Transaction.Builder(nonce)
-                .setGasCoin("MNT")
+                .setGasCoin(0)
                 .setBlockchainId(BlockchainID.TestNet)
                 .declareCandidacy()
                 .setAddress(new MinterAddress("Mx9f7fd953c2c69044b901426831ed03ee0bd0597a"))

@@ -35,6 +35,7 @@ import java.math.BigInteger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import network.minter.core.Coin;
 import network.minter.core.MinterSDK;
 import network.minter.core.crypto.MinterAddress;
 import network.minter.core.internal.helpers.BytesHelper;
@@ -53,7 +54,7 @@ import static network.minter.core.internal.helpers.StringHelper.charsToString;
  */
 public final class TxSendCoin extends Operation {
 
-    private String mCoin = MinterSDK.DEFAULT_COIN;
+    private long mCoin = MinterSDK.DEFAULT_COIN.id;
     private MinterAddress mTo;
     private BigInteger mValue;
 
@@ -100,7 +101,7 @@ public final class TxSendCoin extends Operation {
 		return this;
 	}
 
-	public String getCoinRaw() {
+	public long getCoinRaw() {
 		return mCoin;
 	}
 
@@ -127,14 +128,14 @@ public final class TxSendCoin extends Operation {
         return setTo(new MinterAddress(address));
     }
 
-    public String getCoin() {
-        return mCoin.replace("\0", "");
+    public long getCoin() {
+        return mCoin;//mCoin.replace("\0", "");
     }
 
-    public TxSendCoin setCoin(final String coin) {
-        checkArgument(coin != null && coin.length() >= 3 && coin.length() <= 10, String.format("Invalid coin passed: %s", coin));
+    public TxSendCoin setCoin(final long coin) {
+//        checkArgument(coin != null && coin.id!=null, String.format("Invalid coin passed: %s", coin));
 
-        mCoin = StringHelper.strrpad(10, coin.toUpperCase());
+        mCoin = coin;//StringHelper.strrpad(10, coin.toUpperCase());
         return this;
     }
 
@@ -157,8 +158,8 @@ public final class TxSendCoin extends Operation {
     @Override
     protected FieldsValidationResult validate() {
         return new FieldsValidationResult()
-                .addResult("mCoin", mCoin != null && mCoin.length() > 2 &&
-                        mCoin.length() < 11, "Coin symbol length must be from 3 mTo 10 chars")
+//                .addResult("mCoin", mCoin != null && mCoin.length() > 2 &&
+//                        mCoin.length() < 11, "Coin symbol length must be from 3 mTo 10 chars")
                 .addResult("mTo", mTo != null, "Recipient address must be set")
                 .addResult("mValue", mValue != null, "Value must be set");
     }
@@ -174,13 +175,13 @@ public final class TxSendCoin extends Operation {
 	    final DecodeResult rlp = RLPBoxed.decode(rlpEncodedData, 0);/**/
         final Object[] decoded = (Object[]) rlp.getDecoded();
 
-	    mCoin = charsToString(fromRawRlp(0, decoded));
+	    mCoin = Long.valueOf(charsToString(fromRawRlp(0, decoded)));
         mTo = new MinterAddress(fromRawRlp(1, decoded));
         mValue = BytesHelper.fixBigintSignedByte(fromRawRlp(2, decoded));
     }
 
 	protected void decodeRaw(char[][] vrs) {
-        mCoin = new String(vrs[0]);
+        mCoin = Long.valueOf(new String(vrs[0]));
         mTo = new MinterAddress(vrs[1]);
         mValue = BytesHelper.fixBigintSignedByte(vrs[2]);
     }
